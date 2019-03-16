@@ -36,7 +36,7 @@ pipeline {
             steps {
                     sshagent(['tomcat-dev']){
                     
-                       sh 'scp target/*.war root@http://13.57.209.47:/var/lib/tomcat/webapps/'
+                       sh 'scp target/*.war http://13.57.209.47:/var/lib/tomcat/webapps/ -l root'
                  }
         }
         }
