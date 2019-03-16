@@ -33,8 +33,10 @@ pipeline {
         
         stage ('delploy on tomcat')
         {
-            sshagent(['tomcat-dev'])
-            sh 'scp -o StrickHostKeyChecking=no target/*.war admin2@http://13.57.209.47:/opt/tomcat7/webapps/'
+            steps{
+                    sshagent(['tomcat-dev'])
+                       sh 'scp -o StrickHostKeyChecking=no target/*.war admin2@http://13.57.209.47:/opt/tomcat7/webapps/'
+                 }
         }
-    }
+}
 }
