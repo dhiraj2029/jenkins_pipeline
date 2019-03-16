@@ -34,9 +34,9 @@ pipeline {
         stage ('delploy on tomcat')
         {
             steps {
-                    sshagent(['tomcat-ops']){
+                    sshagent(['tomcat-dev']){
                     
-                       sh 'scp target/*.war admin2@http://13.57.209.47:/opt/tomcat7/webapps/'
+                       sh 'scp target/*.war ec2-user@http://13.57.209.47:/opt/tomcat7/webapps/'
                  }
         }
         }
