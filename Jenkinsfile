@@ -5,7 +5,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                withMaven(maven : '/usr/share/apache-maven') {
+                withMaven(maven : 'localmaven') {
                     sh 'mvn clean compile'
                 }
             }
@@ -14,7 +14,7 @@ pipeline {
         stage ('Testing Stage') {
 
             steps {
-                withMaven(maven : '/usr/share/apache-maven') {
+                withMaven(maven : 'localmaven') {
                     sh 'mvn test'
                 }
             }
@@ -23,7 +23,7 @@ pipeline {
 
         stage ('Deployment Stage') {
             steps {
-                withMaven(maven : '/usr/share/apache-maven') {
+                withMaven(maven : 'localmaven') {
                     sh 'mvn install'
                 }
             }
