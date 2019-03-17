@@ -35,7 +35,7 @@ pipeline {
         {
             steps {
                     sshagent(['tomcat-dev']){
-                      sh 'ssh -t -t -p 22 ec2-user@http://13.57.209.47'
+                      sh 'ssh -t -t -p 22 ec2-user@http://13.57.209.47:8080'
                        sh 'scp -o StrictHostKeyChecking=no target/*.jar -p 22 root@http://13.57.209.47:/var/lib/tomcat/webapps/'
                  }
         }
