@@ -36,7 +36,7 @@ pipeline {
             steps {
                     sshagent(['tomcat-dev']){
                     
-                       sh 'scp -o StrictHostKeyChecking=no target/*.jar root@http://13.57.209.47:/var/lib/tomcat/webapps/'
+                       sh 'scp -o StrictHostKeyChecking=no target/*.jar -p 22 root@http://13.57.209.47:/var/lib/tomcat/webapps/'
                  }
         }
         }
