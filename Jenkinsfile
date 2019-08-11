@@ -5,7 +5,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                withMaven(maven : 'localmaven') {
+                withMaven(maven : 'LocalMaven') {
                     sh 'mvn clean compile'
                 }
             }
@@ -14,7 +14,7 @@ pipeline {
         stage ('Testing Stage') {
 
             steps {
-                withMaven(maven : 'localmaven') {
+                withMaven(maven : 'LocalMaven') {
                     sh 'mvn test'
                 }
             }
@@ -23,7 +23,7 @@ pipeline {
         stage ('Package stage')
         {
             steps {
-                        withMaven(maven : 'localmaven')
+                        withMaven(maven : 'LocalMaven')
                         {
                             sh 'mvn package'
                         }            
