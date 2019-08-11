@@ -35,7 +35,7 @@ pipeline {
         stage ('delploy on tomcat')
         {
             steps {
-                    sshagent(['tomcat-dev']){
+                    withMaven(maven : 'LocalMaven'){
                      
                        sh 'scp -o StrictHostKeyChecking=no target/*.war /var/lib/tomcat/webapps/'
                  }
