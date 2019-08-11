@@ -31,6 +31,7 @@ pipeline {
       
         }
         
+        
         stage ('delploy on tomcat')
         {
             steps {
